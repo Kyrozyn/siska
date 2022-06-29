@@ -18,3 +18,5 @@ Route::get('/login', [\App\Http\Controllers\Account::class, 'login']);
 
 Route::get('/dashboard', [\App\Http\Controllers\Dashboard::class, 'home']);
 Route::get('/dashboard/settings', [\App\Http\Controllers\Dashboard::class, 'settings']);
+
+Route::resource('topiktemuan', \App\Http\Controllers\TopikTemuan::class);

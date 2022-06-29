@@ -36,17 +36,9 @@
         <div class="pt-3"></div>
         <div class="container">
             <div class="card mb-3">
-                <div class="card-body">
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <div class="feature-card mx-auto text-center">
-                                Temuan
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-header">
+                    <h5>Laporkan Temuan</h5>
                 </div>
-            </div>
-            <div class="card mb-3">
                 <div class="card-body">
                     <div class="row g-3">
                         @foreach($topiktemuans as $topiktemuan)
@@ -73,13 +65,16 @@
                     <div class="row g-3">
                         <div class="col-12">
                             <div class="feature-card mx-auto text-center">
-                                Setting Menu Temuan
+                                <a href="{{url('topiktemuan')}}">Setting Topik Temuan</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="card mb-3">
+                <div class="card-header">
+                    <h5>Setting Menu Temuan</h5>
+                </div>
                 <div class="card-body">
                     <div class="row g-3">
                         @foreach($topiktemuans as $topiktemuan)
@@ -101,17 +96,9 @@
         </div>
         <div class="container">
             <div class="card mb-3">
-                <div class="card-body">
-                    <div class="row g-3">
-                        <div class="col-12">
-                            <div class="feature-card mx-auto text-center">
-                                ACC Temuan
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-header">
+                    <h5>ACC Temuan</h5>
                 </div>
-            </div>
-            <div class="card mb-3">
                 <div class="card-body">
                     <div class="row g-3">
                             <ul class="ps-0 chat-user-list">
