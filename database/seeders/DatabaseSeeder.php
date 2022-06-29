@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\TopikTemuan;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -38,5 +39,18 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
         $user_manager->assignRole($role_manager);
+
+        $topik_temuan = new TopikTemuan();
+        $topik_temuan->nama_topik_temuan = 'Topik Temuan 1';
+        $topik_temuan->icon_url = 'https://via.placeholder.com/150';
+        $topik_temuan->save();
+        $topik_temuan = new TopikTemuan();
+        $topik_temuan->nama_topik_temuan = 'Topik Temuan 2';
+        $topik_temuan->icon_url = 'https://via.placeholder.com/150';
+        $topik_temuan->save();
+        $topik_temuan = new TopikTemuan();
+        $topik_temuan->nama_topik_temuan = 'Topik Temuan 3';
+        $topik_temuan->icon_url = 'https://via.placeholder.com/150';
+        $topik_temuan->save();
     }
 }

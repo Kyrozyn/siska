@@ -13,10 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('topik_temuans', function (Blueprint $table) {
+        Schema::create('followup_temuans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_topik_temuan');
-            $table->string('icon_url')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('topik_temuans');
+        Schema::dropIfExists('followup_temuans');
     }
 };
