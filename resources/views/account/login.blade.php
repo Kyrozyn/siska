@@ -14,6 +14,7 @@
             <div class="register-form mt-4">
                 <h6 class="mb-3 text-center">Log in untuk masuk ke dalam sistem SISKA</h6>
                 <form action="{{url('/login')}}" method="post">
+                    @csrf
                     <div class="form-group">
                         <input class="form-control" type="text" placeholder="Username">
                     </div>
