@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('temuan_details', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\Temuan::class);
+            $table->foreignIdFor(\App\Models\PertanyaanTemuan::class);
+            $table->text('jawaban');
             $table->timestamps();
         });
     }

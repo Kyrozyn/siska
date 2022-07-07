@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('pertanyaan_followup_temuans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_pertanyaan_followup_temuan');
+            $table->string('satuan')->nullable();
+            $table->enum('type',['text','number','optionc','option1']);
             $table->timestamps();
         });
     }
