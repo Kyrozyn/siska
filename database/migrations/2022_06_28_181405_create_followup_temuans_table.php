@@ -17,9 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(\App\Models\User::class);
             $table->foreignIdFor(\App\Models\Temuan::class);
-            $table->enum('status', ['Menunggu Konfirmasi KTT', 'Menunggu Konfirmasi Manager','Diterima,Menunggu Follow Up Supervisor','Ditolak','Follow up Ditolak, Upload Ulang','Selesai']);
+            $table->enum('status', ['Menunggu Followup','Menunggu ACC','Revisi','Selesai']);
             $table->string('catatan')->nullable();
-            $table->date('followup_sebelum_tanggal')->nullable();
             $table->timestamps();
         });
     }
