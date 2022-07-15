@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('menu_temuans', function (Blueprint $table) {
             $table->id();
             $table->string('nama_menu_temuan');
+            $table->foreignIdFor(\App\Models\TopikTemuan::class)->nullable();
             $table->foreignIdFor(\App\Models\MenuTemuan::class)->nullable();
             $table->boolean('punya_submenu')->default(false);
             $table->timestamps();

@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="{{asset('style.css')}}">
     <!-- Web App Manifest -->
     <link rel="manifest" href="{{asset('manifest.json')}}">
+
+    @livewireStyles
+
 </head>
 <body>
 <!-- Preloader -->
@@ -59,5 +62,9 @@
 <script src="{{asset('js/active.js')}}"></script>
 <!-- PWA -->
 <script src="{{asset('js/pwa.js')}}"></script>
+@livewireScripts
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<x-livewire-alert::scripts />
 </body>
 </html>

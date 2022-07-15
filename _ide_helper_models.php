@@ -15,14 +15,22 @@ namespace App\Models{
  * App\Models\FollowupTemuan
  *
  * @property int $id
+ * @property int $user_id
+ * @property int $temuan_id
+ * @property string $status
+ * @property string|null $catatan
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan query()
+ * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan whereCatatan($value)
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan whereTemuanId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuan whereUserId($value)
  */
 	class FollowupTemuan extends \Eloquent {}
 }
@@ -32,13 +40,19 @@ namespace App\Models{
  * App\Models\FollowupTemuanDetail
  *
  * @property int $id
+ * @property int $followup_temuan_id
+ * @property int $pertanyaan_followup_temuan_id
+ * @property string $jawaban
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail query()
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail whereFollowupTemuanId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail whereJawaban($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail wherePertanyaanFollowupTemuanId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|FollowupTemuanDetail whereUpdatedAt($value)
  */
 	class FollowupTemuanDetail extends \Eloquent {}
@@ -50,7 +64,9 @@ namespace App\Models{
  *
  * @property int $id
  * @property string $nama_menu_temuan
+ * @property int|null $topik_temuan_id
  * @property int|null $menu_temuan_id
+ * @property int $punya_submenu
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan newModelQuery()
@@ -60,6 +76,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan whereMenuTemuanId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan whereNamaMenuTemuan($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan wherePunyaSubmenu($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan whereTopikTemuanId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan whereUpdatedAt($value)
  */
 	class MenuTemuan extends \Eloquent {}
@@ -70,6 +88,9 @@ namespace App\Models{
  * App\Models\PertanyaanFollowupTemuan
  *
  * @property int $id
+ * @property string $nama_pertanyaan_followup_temuan
+ * @property string|null $satuan
+ * @property string $type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanFollowupTemuan newModelQuery()
@@ -77,6 +98,9 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanFollowupTemuan query()
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanFollowupTemuan whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanFollowupTemuan whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanFollowupTemuan whereNamaPertanyaanFollowupTemuan($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanFollowupTemuan whereSatuan($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanFollowupTemuan whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanFollowupTemuan whereUpdatedAt($value)
  */
 	class PertanyaanFollowupTemuan extends \Eloquent {}
@@ -135,6 +159,9 @@ namespace App\Models{
  * App\Models\TemuanDetail
  *
  * @property int $id
+ * @property int $temuan_id
+ * @property int $pertanyaan_temuan_id
+ * @property string $jawaban
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail newModelQuery()
@@ -142,6 +169,9 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail query()
  * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail whereJawaban($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail wherePertanyaanTemuanId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail whereTemuanId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail whereUpdatedAt($value)
  */
 	class TemuanDetail extends \Eloquent {}

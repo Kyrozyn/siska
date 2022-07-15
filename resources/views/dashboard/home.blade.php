@@ -45,7 +45,7 @@
                         <div class="col-4">
 
                             <div class="feature-card mx-auto text-center">
-                                <a href="#">
+                                <a href="{{url('/dashboard/laporan/front/'.$topiktemuan->id)}}">
                                 <div class="card mx-auto bg-gray"><img src="{{$topiktemuan->icon_url}}" alt=""></div>
                                 </a>
                                 <p class="mb-0">{{$topiktemuan->nama_topik_temuan}}</p>
@@ -65,7 +65,7 @@
                     <div class="row g-3">
                         <div class="col-12">
                             <div class="feature-card mx-auto text-center">
-                                <a href="{{url('topiktemuan')}}">Setting Topik Temuan</a>
+                                <a href="{{url('dashboard/topiktemuan')}}">Setting Topik Temuan</a>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                             <div class="col-4">
 
                                 <div class="feature-card mx-auto text-center">
-                                    <a href="#">
+                                    <a href="{{url('/dashboard/menutemuan/'.$topiktemuan->id)}}">
                                         <div class="card mx-auto bg-gray"><img src="{{$topiktemuan->icon_url}}" alt=""></div>
                                     </a>
                                     <p class="mb-0">{{$topiktemuan->nama_topik_temuan}}</p>

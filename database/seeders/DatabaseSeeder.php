@@ -41,15 +41,27 @@ class DatabaseSeeder extends Seeder
         $user_manager->assignRole($role_manager);
 
         $topik_temuan = new TopikTemuan();
-        $topik_temuan->nama_topik_temuan = 'Topik Temuan 1';
+        $topik_temuan->nama_topik_temuan = 'Keselamatan Kerja';
         $topik_temuan->icon_url = 'https://via.placeholder.com/150';
         $topik_temuan->save();
         $topik_temuan = new TopikTemuan();
-        $topik_temuan->nama_topik_temuan = 'Topik Temuan 2';
+        $topik_temuan->nama_topik_temuan = 'Kesehatan Kerja	';
         $topik_temuan->icon_url = 'https://via.placeholder.com/150';
         $topik_temuan->save();
         $topik_temuan = new TopikTemuan();
-        $topik_temuan->nama_topik_temuan = 'Topik Temuan 3';
+        $topik_temuan->nama_topik_temuan = 'Lingkungan Kerja';
+        $topik_temuan->icon_url = 'https://via.placeholder.com/150';
+        $topik_temuan->save();
+        $topik_temuan = new TopikTemuan();
+        $topik_temuan->nama_topik_temuan = 'Keselamatan Operasi';
+        $topik_temuan->icon_url = 'https://via.placeholder.com/150';
+        $topik_temuan->save();
+        $topik_temuan = new TopikTemuan();
+        $topik_temuan->nama_topik_temuan = 'Pelaporan Kecelakaan Tambang';
+        $topik_temuan->icon_url = 'https://via.placeholder.com/150';
+        $topik_temuan->save();
+        $topik_temuan = new TopikTemuan();
+        $topik_temuan->nama_topik_temuan = 'Checklist Inspeksi';
         $topik_temuan->icon_url = 'https://via.placeholder.com/150';
         $topik_temuan->save();
     }

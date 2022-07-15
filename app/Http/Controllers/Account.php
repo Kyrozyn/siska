@@ -18,8 +18,8 @@ class Account extends Controller
 
     public function loginaction(Request $request)
     {
-        $email = $request->email;
-        $password = $request->password;
+        $email = $request->post('email');
+        $password = $request->post('password');
         $user = \App\Models\User::where('email', $email)->first();
         if ($user) {
             if (\Hash::check($password, $user->password)) {
@@ -31,5 +31,11 @@ class Account extends Controller
         } else {
             return redirect('/login')->with('error', 'Email tidak ditemukan');
         }
+    }
+
+    public function logout()
+    {
+        \Auth::logout();
+        return redirect('/');
     }
 }

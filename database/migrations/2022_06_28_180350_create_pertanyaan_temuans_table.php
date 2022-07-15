@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('pertanyaan_temuans', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\MenuTemuan::class);
             $table->string('nama_pertanyaan_temuan');
             $table->string('satuan')->nullable();
             $table->enum('type',['text','number','optionc','option1']);
