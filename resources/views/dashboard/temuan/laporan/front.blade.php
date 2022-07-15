@@ -11,16 +11,16 @@
 
 {{--                    <h6>Menu Temuan : {{\App\Models\MenuTemuan::whereId($menu_temuan_id)->first()->nama_menu_temuan}}</h6>--}}
                 </div>
-                <div class="card-body">
+{{--                <div class="card-body">--}}
 
-                </div>
+{{--                </div>--}}
             </div>
             @if($menutemuans)
                 @foreach($menutemuans as $menutemuan)
                     <a class="affan-element-item" href="#">{{$menutemuan->nama_menu_temuan}}<i class="bi bi-chevron-right"></i></a>
                 @endforeach
             @else
-                <a class="affan-element-item" href="#">Tidak ada menu temuan, harap hubungi Manager/<i class="bi bi-chevron-right"></i></a>
+                <a class="affan-element-item" href="#">Tidak ada menu temuan, harap hubungi Manager/KTT<i class="bi bi-chevron-right"></i></a>
             @endif
         </div>
     </div>
