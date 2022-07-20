@@ -11,17 +11,17 @@
                     @if($pertanyaan->type == 'text')
                         <div class="form-group">
                             <label for="{{$pertanyaan->id}}">{{$pertanyaan->nama_pertanyaan_temuan}}</label>
-                            <input type="text" class="form-control" id="{{$pertanyaan->id}}" name="{{$pertanyaan->id}}" placeholder="{{$pertanyaan->nama_pertanyaan_temuan}}">
+                            <input type="text" class="form-control" id="{{$pertanyaan->id}}" name="{{$pertanyaan->id}}" placeholder="{{$pertanyaan->nama_pertanyaan_temuan}}" wire:model="jawaban.{{$pertanyaan->id}}">
                         </div>
                     @elseif($pertanyaan->type == 'number')
                         <div class="form-group">
                             <label for="{{$pertanyaan->id}}">{{$pertanyaan->nama_pertanyaan_temuan}}</label>
-                            <input type="number" class="form-control" id="{{$pertanyaan->id}}" name="{{$pertanyaan->id}}" placeholder="{{$pertanyaan->nama_pertanyaan_temuan}}"> {{$pertanyaan->satuan}}
+                            <input type="number" class="form-control" id="{{$pertanyaan->id}}" name="{{$pertanyaan->id}}" placeholder="{{$pertanyaan->nama_pertanyaan_temuan}}" wire:model="jawaban.{{$pertanyaan->id}}"> {{$pertanyaan->satuan}}
                         </div>
                     @elseif($pertanyaan->type == 'option1')
                         <div class="form-group">
                             <label for="{{$pertanyaan->id}}">{{$pertanyaan->nama_pertanyaan_temuan}}</label>
-                            <select class="form-control" id="{{$pertanyaan->id}}" name="{{$pertanyaan->id}}">
+                            <select class="form-control" id="{{$pertanyaan->id}}" name="{{$pertanyaan->id}}" wire:model="jawaban.{{$pertanyaan->id}}">
                                 @foreach($pertanyaan->option_temuan as $option)
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -51,7 +51,7 @@
                             >
                                 <!-- File Input -->
                                 <div class="form-file">
-                                    <input class="form-control d-none" id="customFile" type="file">
+                                    <input class="form-control d-none" id="customFile" type="file" multiple accept="image/*, video/*" wire:model="file_upload">
                                     <label class="form-file-label justify-content-center" for="customFile"><span class="form-file-button btn btn-primary shadow w-100">Upload File</span></label>
                                 </div>
 
@@ -60,10 +60,32 @@
                                     <progress max="100" x-bind:value="progress"></progress>
                                 </div>
                             </div>
-                            <h6 class="mt-4 mb-0">Supported files</h6><small>.jpg .png .jpeg .gif</small>
+{{--                            <h6 class="mt-4 mb-0">Supported files</h6><small>.jpg .png .jpeg .gif</small>--}}
                         </div>
                     </div>
                 </div>
+                    @if($file_upload)
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="file-upload-card">
+                                <div class="row">
+                                    @foreach ($file_upload as $key => $images)
+                                        <div class="col-3 mb-1">
+                                            @if($images->type == 'image')
+                                            <img src="{{ $images->temporaryUrl() }}" wire:click="deleteFile({{$key}})">
+                                                @elseif($images->type == 'video')
+                                                    <video width="100%" height="100%" controls>
+                                                        <source src="{{ $images->temporaryUrl() }}" type="{{ $images->mimeType }}">
+                                                    </video>
+                                                @endif
+
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
             </div>
         </div>
     </div>
