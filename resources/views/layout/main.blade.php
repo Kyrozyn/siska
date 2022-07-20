@@ -48,6 +48,8 @@
     @yield('content')
 </div>
 <!-- All JavaScript Files -->
+<script src="//unpkg.com/alpinejs" defer></script>
+
 <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('js/slideToggle.min.js')}}"></script>
 <script src="{{asset('js/internet-status.js')}}"></script>

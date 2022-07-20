@@ -33,8 +33,12 @@ Route::get('/dashboard/menutemuan/{topik_temuan_id}/create', [\App\Http\Controll
 Route::get('/dashboard/menutemuan/{topik_temuan_id}/create/menutemuanid/{menu_temuan_id}', [\App\Http\Controllers\MenuTemuan::class, 'create']);
 
 //pertanyaantemuan
-Route::get('/dashboard/pertanyaantemuan/{menu_temuan_id}', [\App\Http\Controllers\PertanyaanTemuan::class, 'front']);
+Route::get('/dashboard/pertanyaantemuan/{menu_temuan_id}', [\App\Http\Controllers\PertanyaanTemuan::class, 'index']);
 Route::get('/dashboard/pertanyaantemuan/{menu_temuan_id}/create', [\App\Http\Controllers\PertanyaanTemuan::class, 'create']);
 
 //laporan
 Route::get('/dashboard/laporan/front/{topik_temuan_id}', [\App\Http\Controllers\Laporan::class, 'front']);
+Route::get('/dashboard/laporan/front/next/{menu_temuan_id}', [\App\Http\Controllers\Laporan::class, 'next']);
+
+//pertanyaan
+Route::get('/dashboard/laporan/form/{menu_temuan_id}', [\App\Http\Controllers\Laporan::class, 'form']);

@@ -17,7 +17,11 @@
             </div>
             @if($menutemuans)
                 @foreach($menutemuans as $menutemuan)
-                    <a class="affan-element-item" href="#">{{$menutemuan->nama_menu_temuan}}<i class="bi bi-chevron-right"></i></a>
+                    @if($menutemuan->punya_submenu)
+                        <a class="affan-element-item" href="{{url('/dashboard/laporan/front/next/'.$menutemuan->id)}}">{{$menutemuan->nama_menu_temuan}}<i class="bi bi-chevron-right"></i></a>
+                    @else
+                        <a class="affan-element-item" href="{{url('/dashboard/laporan/form/'.$menutemuan->id)}}">{{$menutemuan->nama_menu_temuan}}<i class="bi bi-chevron-right"></i></a>
+                    @endif
                 @endforeach
             @else
                 <a class="affan-element-item" href="#">Tidak ada menu temuan, harap hubungi Manager/KTT<i class="bi bi-chevron-right"></i></a>

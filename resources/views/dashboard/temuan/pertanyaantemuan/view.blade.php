@@ -29,22 +29,17 @@
                         @foreach($pertanyaantemuans as $pertanyaantemuan)
                             <tr>
                                 <td>{{$pertanyaantemuan->nama_pertanyaan_temuan}}</td>
-                                <td>{{$menu_temuan->satuan}}</td>
-                                <td>{{$menu_temuan->type}}</td>
+                                <td>{{$pertanyaantemuan->satuan}}</td>
+                                <td>{{$pertanyaantemuan->type}}</td>
                                 <td>
                                     <div class="row">
                                         <div class="col-6">
-                                            <form action="{{url('/dashboard/menutemuan/delete/'.$menu_temuan->id)}}" method="post">
+                                            <form action="{{url('/dashboard/menutemuan/delete/'.$pertanyaantemuan->id)}}" method="post">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Hapus</button>
                                             </form>
                                         </div>
-                                        @if($menu_temuan->punya_submenu)
-                                            <div class="col-6">
-                                                <a href="{{url('/dashboard/menutemuan/'.$topik_temuan_id.'/menutemuanid/'.$menu_temuan->id)}}" class="btn btn-primary">Kelola Submenu</a>
-                                            </div>
-                                        @endif
                                     </div>
                             </tr>
                         @endforeach

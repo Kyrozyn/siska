@@ -26,7 +26,6 @@ class Add extends Component
     {
         $this->validate([
             'nama_pertanyaan_temuan' => 'required',
-            'satuan' => 'required',
             'type' => 'required',
         ]);
 

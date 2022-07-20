@@ -9,7 +9,7 @@
     </div>
     <div class="form-group">
         <label class="form-label" for="defaultSelect">Tipe Pertanyaan</label>
-        <select class="form-select form-control" id="defaultSelect" name="defaultSelect" aria-label="Default select example" wire:model="tipe_pertanyaan">
+        <select class="form-select form-control" id="defaultSelect" name="defaultSelect" aria-label="Default select example" wire:model="type">
             <option value="text" selected="">Teks</option>
             <option value="number">Angka</option>
             <option value="option1">1-5</option>
