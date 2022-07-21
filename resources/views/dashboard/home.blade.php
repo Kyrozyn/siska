@@ -94,40 +94,40 @@
             </div>
             <div class="pb-3"></div>
         </div>
-        <div class="container">
-            <div class="card mb-3">
-                <div class="card-header">
-                    <h5>ACC Temuan</h5>
-                </div>
-                <div class="card-body">
-                    <div class="row g-3">
-                            <ul class="ps-0 chat-user-list">
-                                @foreach($topiktemuans as $topiktemuan)
-                                <li class="p-3"><a class="d-flex" href="#">
-                                        <!-- Thumbnail -->
-                                        <div class="chat-user-thumbnail me-3 shadow"><img class="img-circle" src="img/bg-img/user2.png" alt=""></div>
-                                        <!-- Info -->
-                                        <div class="chat-user-info">
-                                            <h6 class="text-truncate mb-0">Mustafa Rabbi</h6>
-                                            <div class="last-chat">
-                                                <p class="text-truncate mb-0">How can I help you?</p>
-                                            </div>
-                                        </div></a>
-                                    <!-- Options -->
-                                    <div class="dropstart chat-options-btn">
-                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#"><i class="bi bi-check"></i>Acc</a></li>
-                                            <li><a href="#"><i class="bi bi-slash-circle"></i>Tolak</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                @endforeach
-                            </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="pb-3"></div>
+{{--        <div class="container">--}}
+{{--            <div class="card mb-3">--}}
+{{--                <div class="card-header">--}}
+{{--                    <h5>ACC Temuan</h5>--}}
+{{--                </div>--}}
+{{--                <div class="card-body">--}}
+{{--                    <div class="row g-3">--}}
+{{--                            <ul class="ps-0 chat-user-list">--}}
+{{--                                @foreach($topiktemuans as $topiktemuan)--}}
+{{--                                <li class="p-3"><a class="d-flex" href="#">--}}
+{{--                                        <!-- Thumbnail -->--}}
+{{--                                        <div class="chat-user-thumbnail me-3 shadow"><img class="img-circle" src="img/bg-img/user2.png" alt=""></div>--}}
+{{--                                        <!-- Info -->--}}
+{{--                                        <div class="chat-user-info">--}}
+{{--                                            <h6 class="text-truncate mb-0">Mustafa Rabbi</h6>--}}
+{{--                                            <div class="last-chat">--}}
+{{--                                                <p class="text-truncate mb-0">How can I help you?</p>--}}
+{{--                                            </div>--}}
+{{--                                        </div></a>--}}
+{{--                                    <!-- Options -->--}}
+{{--                                    <div class="dropstart chat-options-btn">--}}
+{{--                                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-three-dots-vertical"></i></button>--}}
+{{--                                        <ul class="dropdown-menu">--}}
+{{--                                            <li><a href="#"><i class="bi bi-check"></i>Acc</a></li>--}}
+{{--                                            <li><a href="#"><i class="bi bi-slash-circle"></i>Tolak</a></li>--}}
+{{--                                        </ul>--}}
+{{--                                    </div>--}}
+{{--                                </li>--}}
+{{--                                @endforeach--}}
+{{--                            </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--            <div class="pb-3"></div>--}}
         </div>
 
 @include('layout.footerdashboard')
