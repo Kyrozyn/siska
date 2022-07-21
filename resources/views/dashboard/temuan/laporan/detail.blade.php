@@ -19,7 +19,7 @@
                             <div class="card-body">
                                 <div class="file-upload-card">
                                     @foreach($temuan->getMedia('file') as $file)
-                                        <div class="col-3 mb-1">
+                                        <div class="col-12 mb-1">
                                             <img src="{{$file->getUrl()}}" style="width: 30px">
                                             <p>{{$file->name}}</p>
                                         </div>
