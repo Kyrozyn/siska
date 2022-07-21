@@ -22,6 +22,7 @@
                         <div class="form-group">
                             <label for="{{$pertanyaan->id}}">{{$pertanyaan->nama_pertanyaan_temuan}}</label>
                             <select class="form-control" id="{{$pertanyaan->id}}" name="{{$pertanyaan->id}}" wire:model="jawaban.{{$pertanyaan->id}}">
+                                    <option value="">Pilih Opsi</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
