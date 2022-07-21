@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Temuan;
 use Illuminate\Http\Request;
 
 class Laporan extends Controller
@@ -22,5 +23,10 @@ class Laporan extends Controller
         $menutemuans = \App\Models\MenuTemuan::where('id',$menu_temuan_id)->first();
         $pertanyaan_temuans = \App\Models\PertanyaanTemuan::where('menu_temuan_id',$menu_temuan_id)->get();
         return view('dashboard.temuan.laporan.form',compact('menutemuans','pertanyaan_temuans'));
+    }
+
+    public function tampil(){
+        $temuans = Temuan::all();
+        return view('dashboard.temuan.laporan.tampil',compact('temuans'));
     }
 }

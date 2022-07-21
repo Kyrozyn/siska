@@ -36,6 +36,7 @@ class Form extends Component
 
         $temuan = new Temuan();
         $temuan->user_id =  \Auth::user()->id;
+        $temuan->menu_temuan_id = $this->menutemuans->id;
         $temuan->status = 'Menunggu Konfirmasi KTT';
         $temuan->save();
         foreach ($this->pertanyaan_temuans as $key => $pertanyaan_temuan) {

@@ -14,4 +14,12 @@ class Temuan extends Model implements HasMedia
     public function detail(){
         return $this->hasMany(TemuanDetail::class);
     }
+
+    public function menutemuan(){
+        return $this->belongsTo(MenuTemuan::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
