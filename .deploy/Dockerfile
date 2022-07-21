@@ -90,6 +90,6 @@ ARG PUSHER_APP_CLUSTER=${PUSHER_APP_CLUSTER}
 # Start app
 EXPOSE 80
 COPY ./.deploy/entrypoint.sh /
-
+RUN php artisan storage:link
 ENTRYPOINT ["sh",  "/entrypoint.sh"]
 
