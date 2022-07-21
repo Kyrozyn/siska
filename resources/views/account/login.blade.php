@@ -9,12 +9,12 @@
 
 
     <!-- Login Wrapper Area -->
-    <div class="login-wrapper d-flex align-items-center justify-content-center" style="background: url('{{asset('img/coal-crop.jpg')}}')">
+    <div class="login-wrapper d-flex align-items-center justify-content-center" style="background: url('{{asset('img/bgpexel.jpg')}}')">
         <div class="custom-container">
-            <div class="text-center px-4"><img class="login-intro-img" src="{{asset('img/siska-logo.png')}}" alt=""></div>
+            <div class="text-center px-4"><img class="login-intro-img" src="{{asset('img/logosesil.png')}}" alt=""></div>
             <!-- Register Form -->
             <div class="register-form mt-4">
-                <h6 class="mb-3 text-center">Log in untuk masuk ke dalam sistem SISKA</h6>
+                <h6 class="mb-3 text-center">Log in untuk masuk ke dalam sistem SESIL</h6>
                 @if(session()->has('error'))
                     <div class="alert alert-danger">
                         {{ session()->get('error') }}
