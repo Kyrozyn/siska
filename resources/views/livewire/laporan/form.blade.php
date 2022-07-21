@@ -34,12 +34,12 @@
                         <div class="form-group">
                             <label>{{$pertanyaan->nama_pertanyaan_temuan}}</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="primaryRadio1" id="primaryRadio1" value="Ya" wire:model="jawaban.{{$pertanyaan->id}}">
-                                <label class="form-check-label" for="primaryRadio1">Ya</label>
+                                <input class="form-check-input" type="radio" name="{{$pertanyaan->id}}-ya" id="{{$pertanyaan->id}}-ya" value="Ya" wire:model="jawaban.{{$pertanyaan->id}}">
+                                <label class="form-check-label" for="{{$pertanyaan->id}}-ya">Ya</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="primaryRadio2" id="primaryRadio2" value="Tidak" wire:model="jawaban.{{$pertanyaan->id}}">
-                                <label class="form-check-label" for="primaryRadio2">Tidak</label>
+                                <input class="form-check-input" type="radio" name="{{$pertanyaan->id}}-tidak" id="{{$pertanyaan->id}}-tidak" value="Tidak" wire:model="jawaban.{{$pertanyaan->id}}">
+                                <label class="form-check-label" for="{{$pertanyaan->id}}-tidak">Tidak</label>
                             </div>
                         </div>
                     @endif
