@@ -12,7 +12,7 @@
                     <path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
                 </svg>
                 <div class="toast-text ms-3 me-2">
-                    <p class="mb-1 text-white">Selamat datang di SISKA!</p>
+                    <p class="mb-1 text-white">Selamat datang di SESIL!</p>
                 </div>
             </div>
             <button class="btn btn-close btn-close-white position-absolute p-1" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -22,7 +22,7 @@
             <div class="tiny-slider-one">
                 <!-- Single Hero Slide -->
                 <div>
-                    <div class="single-hero-slide bg-overlay" style="background-image: url('{{asset('img/coal-bg.jpg')}}')">
+                    <div class="single-hero-slide bg-overlay" style="background-image: url('{{asset('img/bgpexel.jpg')}}')">
                         <div class="h-100 d-flex align-items-center text-center">
                             <div class="container">
                                 <h3 class="text-white mb-1">Selamat Datang, xxxx!</h3>
