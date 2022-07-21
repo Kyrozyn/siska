@@ -13,6 +13,7 @@
             <option value="text" selected="">Teks</option>
             <option value="number">Angka</option>
             <option value="option1">1-5</option>
+            <option value="optionya">Ya/Tidak</option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary" wire:click="insert">Tambah</button>

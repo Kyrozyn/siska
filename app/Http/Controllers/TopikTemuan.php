@@ -34,7 +34,7 @@ class TopikTemuan extends Controller
         $topiktemuan->nama_topik_temuan = $nama_topik_temuan;
         $topiktemuan->icon_url = $icon_url_path;
         $topiktemuan->save();
-        return redirect('/topiktemuan');
+        return redirect('/dashboard/topiktemuan');
     }
 
     /**
