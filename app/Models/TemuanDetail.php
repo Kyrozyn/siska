@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class TemuanDetail extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
 }

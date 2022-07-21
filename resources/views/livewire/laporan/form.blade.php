@@ -22,13 +22,11 @@
                         <div class="form-group">
                             <label for="{{$pertanyaan->id}}">{{$pertanyaan->nama_pertanyaan_temuan}}</label>
                             <select class="form-control" id="{{$pertanyaan->id}}" name="{{$pertanyaan->id}}" wire:model="jawaban.{{$pertanyaan->id}}">
-                                @foreach($pertanyaan->option_temuan as $option)
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                     <option value="5">5</option>
-                                @endforeach
                             </select>
                         </div>
                     @endif
@@ -80,6 +78,9 @@
                         </div>
                     </div>
                     @endif
+                    <div class="form-group">
+                        <button wire:click="submit()" class="btn btn-primary shadow w-100">Buat Laporan</button>
+                    </div>
             </div>
         </div>
     </div>
