@@ -8,7 +8,7 @@ class MenuTemuan extends Controller
 {
     public function index($topik_temuan_id)
     {
-        $menu_temuans = \App\Models\MenuTemuan::where('topik_temuan_id',(int)$topik_temuan_id)->get();
+        $menu_temuans = \App\Models\MenuTemuan::where('topik_temuan_id',(int)$topik_temuan_id)->where('menu_temuan_id',null)->get();
         return view('dashboard.temuan.menutemuan.view', compact('menu_temuans','topik_temuan_id'));
     }
 
