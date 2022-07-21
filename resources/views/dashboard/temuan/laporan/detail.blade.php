@@ -12,13 +12,32 @@
                         <h6>Menu Temuan : {{\App\Models\MenuTemuan::whereId($temuan->menu_temuan_id)->first()->nama_menu_temuan}}</h6>
                 </div>
                 <div class="card-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="file-upload-card">
+                                <h4>Detail Laporan Temuan</h4>
+                                <a class="affan-element-item" href="#">Status : {{$temuan->status}}</a>
+                                <a class="affan-element-item" href="#">Dilaporkan Pada Tanggal : {{$temuan->created_at}}</a>
+                                <a class="affan-element-item" href="#">Followup Sebelum Tanggal : {{$temuan->followup_sebelum_tanggal ?? "-"}}</a>
+                            </div>
+                        </div>
+                    </div>
                     @foreach($temuan->detail as $detail)
-                        <a class="affan-element-item" href="#">{{$detail->pertanyaan_temuan->nama_pertanyaan_temuan}} : {{$detail->jawaban}}</a>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="file-upload-card">
+                                    <h6>Jawaban Pertanyaan Temuan</h6>
+                                    <a class="affan-element-item" href="#">{{$detail->pertanyaan_temuan->nama_pertanyaan_temuan}} : {{$detail->jawaban}}</a>
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
                         <div class="card">
                             <div class="card-body">
                                 <div class="file-upload-card">
-                                    @foreach($temuan->getMedia('file') as $file)
+                                    <h6>File yang di Upload</h6>
+
+                                @foreach($temuan->getMedia('file') as $file)
                                         <a href="{{$file->getUrl()}}" target="_blank">
                                         <div class="col-12 mb-1">
                                             @if($file->mime_type == 'application/pdf')
