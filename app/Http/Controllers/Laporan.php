@@ -8,7 +8,7 @@ class Laporan extends Controller
 {
     public function front($topik_temuan_id)
     {
-        $menutemuans = \App\Models\MenuTemuan::whereTopikTemuanId($topik_temuan_id)->get();
+        $menutemuans = \App\Models\MenuTemuan::whereTopikTemuanId($topik_temuan_id)->where('menu_temuan_id',null)->get();
         return view('dashboard.temuan.laporan.front',compact('menutemuans'));
     }
 
