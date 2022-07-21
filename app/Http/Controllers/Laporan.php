@@ -29,4 +29,9 @@ class Laporan extends Controller
         $temuans = Temuan::all();
         return view('dashboard.temuan.laporan.tampil',compact('temuans'));
     }
+
+    public function detail($id_temuan){
+        $temuan = Temuan::whereId($id_temuan)->first();
+        return view('dashboard.temuan.laporan.detail',compact('temuan'));
+    }
 }

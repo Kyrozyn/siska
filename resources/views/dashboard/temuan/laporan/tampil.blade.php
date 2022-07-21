@@ -15,12 +15,12 @@
 
                 {{--                </div>--}}
             </div>
-            @if($temuans)
+            @if($temuans->count() > 0)
                 @foreach($temuans as $temuan)
-                        <a class="affan-element-item" href="{{url('/dashboard/laporan/tampil/'.$temuan->id)}}">{{$temuan->id}}-{{$temuan->menutemuan->nama_menu_temuan}}-{{$temuan->user->name}}<i class="bi bi-chevron-right"></i></a>
+                        <a class="affan-element-item" href="{{url('/dashboard/laporan/tampil/'.$temuan->id)}}">{{$temuan->id}} - {{\App\Models\MenuTemuan::whereId($temuan->menu_temuan_id)->first()->nama_menu_temuan}} - {{$temuan->user->name}}<i class="bi bi-chevron-right"></i></a>
                 @endforeach
             @else
-                <a class="affan-element-item" href="#">Tidak ada Laporan Temuan<i class="bi bi-chevron-right"></i></a>
+                <a class="affan-element-item" href="#">Tidak ada Laporan Temuan Baru</a>
             @endif
         </div>
     </div>

@@ -42,3 +42,6 @@ Route::get('/dashboard/laporan/front/next/{menu_temuan_id}', [\App\Http\Controll
 
 //pertanyaan
 Route::get('/dashboard/laporan/form/{menu_temuan_id}', [\App\Http\Controllers\Laporan::class, 'form']);
+
+Route::get('/dashboard/laporan/tampil', [\App\Http\Controllers\Laporan::class, 'tampil']);
+Route::get('/dashboard/laporan/tampil/{id_temuan}', [\App\Http\Controllers\Laporan::class, 'detail']);

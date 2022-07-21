@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class MenuTemuan extends Model
 {
     use HasFactory;
+
+    public function topiktemuan(){
+        return $this->belongsTo(TopikTemuan::class);
+    }
 }

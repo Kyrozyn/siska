@@ -69,6 +69,7 @@ namespace App\Models{
  * @property int $punya_submenu
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\TopikTemuan|null $topiktemuan
  * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|MenuTemuan query()
@@ -111,6 +112,7 @@ namespace App\Models{
  * App\Models\PertanyaanTemuan
  *
  * @property int $id
+ * @property int $menu_temuan_id
  * @property string $nama_pertanyaan_temuan
  * @property string|null $satuan
  * @property string $type
@@ -121,6 +123,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanTemuan query()
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanTemuan whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanTemuan whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanTemuan whereMenuTemuanId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanTemuan whereNamaPertanyaanTemuan($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanTemuan whereSatuan($value)
  * @method static \Illuminate\Database\Eloquent\Builder|PertanyaanTemuan whereType($value)
@@ -135,11 +138,18 @@ namespace App\Models{
  *
  * @property int $id
  * @property int $user_id
+ * @property int $menu_temuan_id
  * @property string $status
  * @property string|null $catatan
  * @property string|null $followup_sebelum_tanggal
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\TemuanDetail[] $detail
+ * @property-read int|null $detail_count
+ * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property-read int|null $media_count
+ * @property-read \App\Models\MenuTemuan|null $menutemuan
+ * @property-read \App\Models\User|null $user
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan query()
@@ -147,11 +157,12 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan whereFollowupSebelumTanggal($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Temuan whereMenuTemuanId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan whereStatus($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Temuan whereUserId($value)
  */
-	class Temuan extends \Eloquent {}
+	class Temuan extends \Eloquent implements \Spatie\MediaLibrary\HasMedia {}
 }
 
 namespace App\Models{
@@ -164,6 +175,8 @@ namespace App\Models{
  * @property string $jawaban
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\PertanyaanTemuan|null $pertanyaan_temuan
+ * @property-read \App\Models\Temuan|null $temuan
  * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|TemuanDetail query()
