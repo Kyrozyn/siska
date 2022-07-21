@@ -22,16 +22,16 @@
                             </div>
                         </div>
                     </div>
-                    @foreach($temuan->detail as $detail)
                         <div class="card">
                             <div class="card-body">
                                 <div class="file-upload-card">
                                     <h6>Jawaban Pertanyaan Temuan</h6>
+                                    @foreach($temuan->detail as $detail)
                                     <a class="affan-element-item" href="#">{{$detail->pertanyaan_temuan->nama_pertanyaan_temuan}} : {{$detail->jawaban}}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
-                    @endforeach
                         <div class="card">
                             <div class="card-body">
                                 <div class="file-upload-card">
