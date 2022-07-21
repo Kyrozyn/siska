@@ -22,11 +22,11 @@
                                         <a href="{{$file->getUrl()}}" target="_blank">
                                         <div class="col-12 mb-1">
                                             @if($file->mime_type == 'application/pdf')
-                                                <i class="fa fa-file-pdf-o fa-2x"></i>
+                                                <i class="fa fa-file-pdf fa-2x"></i>
                                             @elseif($file->mime_type == 'image/jpg' || $file->mime_type == 'image/jpeg' || $file->mime_type == 'image/png')
                                             <img src="{{$file->getUrl()}}" style="width: 30px">
                                             @else
-                                                <i class="fa fa-file-o fa-2x"></i>
+                                                <i class="fa fa-file fa-2x"></i>
                                             @endif
                                                 <p>{{$file->name}}</p>
                                         </div>
