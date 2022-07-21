@@ -13,7 +13,7 @@
         <div class="skip-page"><a href="{{url('/login')}}">Login</a></div>
         <!-- Hero Block Content -->
         <div class="hero-block-content"><img class="mb-4" src="{{asset('img/logosesil.png')}}" alt="">
-            <h2 class="display-4 text-black mb-3 font-weight-bolder" style="text-shadow: black">Plan - Do - Act - Check</h2>
+            <h2 class="display-4 text-black mb-3 font-weight-bolder" style="text-shadow: black">SESIL</h2>
             <p class="text-black font-weight-bolder" style="text-shadow: black;">SESIL adalah sebuah sistem untuk mendukung percepatan distribusi informasi
             </p>
             <a class="btn btn-warning btn-lg w-100" href="{{url('/login')}}">Masuk ke Sistem SESIL</a>

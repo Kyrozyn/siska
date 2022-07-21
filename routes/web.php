@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\Account::class, 'gettingStarted']);
-Route::get('/login', [\App\Http\Controllers\Account::class, 'login']);
+Route::get('/login', [\App\Http\Controllers\Account::class, 'login'])->name('login');
 Route::post('/login', [\App\Http\Controllers\Account::class, 'loginaction']);
 
 
